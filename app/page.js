@@ -2,10 +2,8 @@
 
 import React, { useEffect } from "react";
 import Header from "./components/Header";
-import Main from "./components/Main";
-import Movies from "./components/Movies";
+import Banner from "./components/Banner";
 import MoviesNew from "./components/MoviesNew";
-import CenterMode from "./components/Slicker";
 import { getMovies } from "@/utils";
 
 export default function Home() {
@@ -28,13 +26,10 @@ export default function Home() {
   return (
     <main className="z-100 relative">
       <Header />
-      <Main randMovie={randMovie} />
-      {/* <div className="bg-gradient-to-t from-90% from-bg-black  -mt-40"> */}
-      {/* <div className="bg-gradient-to-t from-90% from-bg-black -mt-40"> */}
+      <Banner randMovie={randMovie} />
       <div className="relative">
-        <MoviesNew data={data} initial={true} title={'New release'} />
-        {/* <CenterMode /> */}
-        <MoviesNew data={data} title={'hey'} />
+        <MoviesNew data={data} initial={true} title={"New release"} />
+        <MoviesNew data={data} title={"hey"} />
         <MoviesNew data={data} />
       </div>
     </main>

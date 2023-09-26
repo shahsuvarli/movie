@@ -5,10 +5,10 @@ import React from "react";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { FaPlay } from "react-icons/fa";
 
-function Main({ randMovie }) {
+function Banner({ randMovie }) {
   return (
     <React.Fragment>
-      <div className="flex justify-center flex-wrap items-center flex-col w-full h-screen relative -z-10 bg-red-400">
+      <div className="flex justify-center flex-wrap items-center flex-col w-full h-screen relative -z-10">
         <div className="w-full h-full absolute">
           <Image
             layout="fill"
@@ -16,8 +16,8 @@ function Main({ randMovie }) {
             alt="background"
             className="absolute top-0 w-full -z-50"
             src={
-              "https://image.tmdb.org/t/p/original/hiHGRbyTcbZoLsYYkO4QiCLYe34.jpg"
-              // `https://image.tmdb.org/t/p/original${randMovie.backdrop_path}`
+              // "https://image.tmdb.org/t/p/original/hiHGRbyTcbZoLsYYkO4QiCLYe34.jpg"
+              `https://image.tmdb.org/t/p/original${randMovie.backdrop_path}`
             }
           />
         </div>
@@ -42,4 +42,4 @@ function Main({ randMovie }) {
   );
 }
 
-export default Main;
+export default Banner;
