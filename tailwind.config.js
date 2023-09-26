@@ -7,6 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      zIndex: {
+        1000: "9999",
+      },
+      scale: { 200: "2.00" },
+      colors: { "bg-black": "#141414" },
+      width: { "200px": "200px" },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

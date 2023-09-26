@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React from "react";
 
 function Header() {
   return (
-    <nav className="bg-gradient-to-b from-black w-full px-12 drop-shadow-md text-white box-sizing border-box h-20 flex items-center justify-between">
+    <nav className="fixed bg-gradient-to-b from-black w-full px-12 drop-shadow-md text-white box-sizing border-box h-20 flex items-center justify-between z-50">
       {/* <Image src={'/images/netflix-logo.png'} width={100} height={100} alt="netflix logo"/> */}
       <div className="flex flex-row gap-6 child-hover:cursor-pointer">
         <p>Netflix</p>
