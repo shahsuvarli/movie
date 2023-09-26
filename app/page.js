@@ -7,6 +7,13 @@ import MoviesNew from "./components/MoviesNew";
 import { getMovies } from "@/utils";
 
 export default function Home() {
+  const carousel = [
+    { id: 0, title: "New releases" },
+    { id: 1, title: "Continue Watching" },
+    { id: 2, title: "Popular on Netflix" },
+    { id: 3, title: "Trending Now" },
+    { id: 4, title: "Casual Viewing" },
+  ];
   const [data, setData] = React.useState([]);
 
   useEffect(() => {
@@ -27,11 +34,12 @@ export default function Home() {
     <main className="z-100 relative">
       <Header />
       <Banner randMovie={randMovie} />
-      <div className="relative">
-        <MoviesNew data={data} initial={true} title={"New release"} />
-        <MoviesNew data={data} title={"hey"} />
-        <MoviesNew data={data} />
+      <div className="relative -mt-48 px-16 bg-gradient-to-t from-85% from-[#141414]">
+        {carousel.map(({ id, title }) => (
+          <MoviesNew data={data} title={title} key={id} />
+        ))}
       </div>
     </main>
   );
 }
+// bg-gradient-to-t from-40% from-[#141414]

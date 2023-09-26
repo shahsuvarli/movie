@@ -23,14 +23,14 @@ function Banner({ randMovie }) {
         </div>
         <div className="w-full flex relative">
           <div className="flex flex-col w-full absolut gap-6 z-10  text-white px-10">
-            <p className="text-6xl w-2/5">{randMovie.original_title}</p>
+            <p className="text-6xl w-2/5 hover:cursor-pointer">{randMovie.original_title}</p>
             <p className="w-2/5">{randMovie.overview.split(".")[0]}</p>
             <div className="flex justify-between gap-4 w-1/5">
-              <button className="bg-white text-black w-40 h-10 rounded flex flex-row items-center justify-evenly">
+              <button className="bg-white text-black w-40 h-10 rounded flex flex-row items-center justify-evenly hover:cursor-pointer">
                 <FaPlay />
                 <span>Play</span>
               </button>
-              <button className="bg-zinc-300/30 text-white w-60 h-10 rounded flex justify-evenly items-center">
+              <button className="bg-zinc-300/30 text-white w-60 h-10 rounded flex justify-evenly items-center hover:cursor-pointer">
                 <AiOutlineInfoCircle size={23} />
                 <span>More Info</span>
               </button>

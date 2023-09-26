@@ -5,22 +5,22 @@ import { SlLike } from "react-icons/sl";
 
 function MovieCard({ movie }) {
   return (
-    <div className="w-[250px] snap-start group">
-      <div className="w-[250px] hover:cursor-pointer group-hover:scale-150 transition duration-500">
+    <div className="w-[216px] snap-start group rounded-md hover:z-1000 shadow-2xl">
+      <div className="w-[216px] hover:cursor-pointer group-hover:scale-[1.5] transition duration-500 rounded-md">
         <img
           src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-          className="  "
+          className="rounded-md group-hover:rounded-b-none"
         />
-        <div className="hidden group-hover:flex h-20 flex-col pt-2 pl-2 bg-[#2d2d2d]">
+        <div className="hidden group-hover:flex h-20 flex-col pt-2 pl-2 bg-[#2b2b2b] rounded-b-md">
           <div className="flex flex-row justify-center">
             <div className="w-full flex jusify-center items-start gap-2 hover:cursor-auto">
-              <span className="rounded-full border-solid border-[1px] border-white w-6 h-6 flex justify-center items-center bg-white">
+              <span className="rounded-full hover:cursor-pointer border-solid border-[1px] border-white w-6 h-6 flex justify-center items-center bg-white group-hover:cursor-pointer">
                 <FaPlay size={10} color="black" />
               </span>
-              <span className="rounded-full border-solid border-[1px] border-white w-6 h-6 flex justify-center items-center">
+              <span className="rounded-full hover:cursor-pointer border-solid border-[1px] border-white w-6 h-6 flex justify-center items-center">
                 <AiOutlinePlus size={10} />
               </span>
-              <span className="rounded-full border-solid border-[1px] border-white w-6 h-6 flex justify-center items-center">
+              <span className="rounded-full hover:cursor-pointer border-solid border-[1px] border-white w-6 h-6 flex justify-center items-center">
                 <SlLike size={10} />
               </span>
             </div>
