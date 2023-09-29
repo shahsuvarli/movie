@@ -16,7 +16,7 @@ function MovieDetail({ params }) {
   }, []);
 
   if (!movie) {
-    return <div>Movie is loading...</div>;
+    return <div>Movie is loading..</div>;
   }
 
   return (
