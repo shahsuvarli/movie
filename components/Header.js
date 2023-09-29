@@ -1,10 +1,14 @@
+'use client'
+
 import Image from "next/legacy/image";
 import React from "react";
 import { BsSearch } from "react-icons/bs";
 import { FiBell } from "react-icons/fi";
 import { AiFillCaretDown } from "react-icons/ai";
+import { useRouter } from "next/navigation";
 
 function Header() {
+  const router = useRouter()
   const size = 20;
   return (
     <nav className="fixed bg-gradient-to-b from-5% from-[#141414] w-full px-12 drop-shadow-md text-white box-sizing border-box h-20 flex items-center justify-between z-50">
@@ -13,8 +17,9 @@ function Header() {
           src={"/images/logo.png"}
           alt="logo"
           width={100}
-          height={30}
+          height={20}
           className="w-[100px]"
+          onClick={()=>router.push('/')}
         />
         <p>Home</p>
         <p>TV Shows</p>
