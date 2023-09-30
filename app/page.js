@@ -17,6 +17,7 @@ export default function Home() {
   const [toprated, setToprated] = React.useState([]);
   const [upcoming, setUpcoming] = React.useState([]);
   const [nowPlaying, setNowPlaying] = React.useState([]);
+  const [banner, setBanner] = React.useState({});
 
   const carousel = [
     { id: 0, title: "New releases", list: movies },
@@ -37,18 +38,20 @@ export default function Home() {
       setToprated(toprated);
       setUpcoming(upcoming);
       setNowPlaying(nowPlaying);
+
+      const banner =
+        movies.results[Math.floor(Math.random() * movies.results.length)];
+      setBanner(banner);
     })();
   }, []);
 
   if (!movies.results) {
     return <div>Loading...</div>;
   }
-  const randMovie =
-    movies.results[Math.floor(Math.random() * movies.results.length)];
 
   return (
     <main className="z-100 relative">
-      <Banner randMovie={randMovie} />
+      <Banner randMovie={banner} />
       <div className="relative -mt-48 px-16 bg-gradient-to-t from-85% from-[#141414]">
         {carousel.map(({ id, title, list }) => (
           <MoviesNew data={list} title={title} key={id} genres={genres} />

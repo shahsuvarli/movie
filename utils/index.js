@@ -1,6 +1,7 @@
+// `https://api.themoviedb.org/3/discover/movie?api_key=1b0710c2d7ea099af51c2b0b40d2d35f`,
+
 export async function getMovies() {
   const res = await fetch(
-    // `https://api.themoviedb.org/3/discover/movie?api_key=1b0710c2d7ea099af51c2b0b40d2d35f`,
     `https://api.themoviedb.org/3/discover/movie/?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
     { cache: "no-cache" }
   );
