@@ -161,3 +161,33 @@ export async function getVideos(movie_id) {
 
   return data;
 }
+
+export async function getPersonLong(id) {
+  const response = await fetch(`/api/person/long/${id}`, {
+    cache: "no-cache",
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  });
+  if (!response.ok) {
+    throw new Error("Failed to fetch the person data (long)");
+  }
+
+  const data = await response.json();
+
+  return data;
+}
+
+export async function getPersonShort(id) {
+  const response = await fetch(`/api/person/short/${id}`, {
+    cache: "no-cache",
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  });
+  if (!response.ok) {
+    throw new Error("Failed to fetch the person data (short)");
+  }
+
+  const data = await response.json();
+
+  return data;
+}

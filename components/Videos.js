@@ -2,7 +2,7 @@ import React from "react";
 
 function Videos({ videos }) {
   return (
-    <div className="w-[80%] bg-white p-8 flex flex-col gap-4 rounded-md min-h-8">
+    <div className="w-[80%] bg-white p-8 flex flex-col gap-4 rounded-md min-h-8 mb-[3%]">
       <p className="text-black w-full text-left font-semibold text-lg">
         Videos
       </p>
@@ -20,7 +20,7 @@ function Videos({ videos }) {
             ></iframe>
           ))
         ) : (
-          <p>There are no movie videos</p>
+          <p className="text-black">There are no movie videos</p>
         )}
       </div>
     </div>

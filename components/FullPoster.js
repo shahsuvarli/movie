@@ -9,7 +9,11 @@ function FullPoster({ image }) {
         priority
         className="object-contain group-hover:blur-md transition-all duration-300 w-[200px] h-9 rounded-md"
         alt={`poster`}
-        src={`https://image.tmdb.org/t/p/original${image}`}
+        src={
+          image
+            ? `https://image.tmdb.org/t/p/original${image}`
+            : "https://fakeimg.pl/200x200/f1f1f1?text= &font=museo"
+        }
       />
     </span>
   );

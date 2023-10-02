@@ -58,7 +58,7 @@ function MovieDetail({ params }) {
         src={
           movie.backdrop_path
             ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
-            : "https://fakeimg.pl/200x200/000?text= &font=museo"
+            : "https://fakeimg.pl/200x200/f1f1f1?text= &font=museo"
         }
       />
       <div></div>
@@ -75,7 +75,11 @@ function MovieDetail({ params }) {
               priority
               className="object-cover rounded-t-lg w-full group-hover:blur-md transition-all duration-300"
               alt={`${movie.title}-poster`}
-              src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+              src={
+                movie.poster_path
+                  ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
+                  : "https://fakeimg.pl/200x200/f1f1f1?text= &font=museo"
+              }
             />
             <div className="absolute hidden group-hover:flex justify-center items-center gap-2 font-medium transition-all duration-200">
               <MdOutlineZoomOutMap size={30} />
@@ -117,7 +121,7 @@ function MovieDetail({ params }) {
                     height={30}
                     priority
                     alt={`${movie.title}-poster`}
-                    src={flag_url}
+                    src={`https://flagsapi.com/${flag.iso_3166_1}/shiny/64.png`}
                     key={flag.iso_3166_1}
                   />
                 );

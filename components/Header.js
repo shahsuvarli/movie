@@ -19,7 +19,7 @@ function Header() {
             alt="logo"
             layout="fill"
             priority
-            className="object-contain"
+            className="object-contain hover:cursor-pointer"
             onClick={() => router.push("/")}
           />
         </span>
