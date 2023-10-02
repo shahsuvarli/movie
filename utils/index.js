@@ -95,3 +95,37 @@ export async function getMovie(movie_id) {
 
   return data;
 }
+
+export async function getKeywords(movie_id) {
+  const response = await fetch(`/api/movie/${movie_id}/keywords`, {
+    cache: "no-cache",
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to get the movie keywords data");
+  }
+
+  const data = await response.json();
+
+  return data;
+}
+
+export async function getCredits(movie_id) {
+  const response = await fetch(`/api/movie/${movie_id}/credits/`, {
+    cache: "no-cache",
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch the movie credits data");
+  }
+
+  const data = await response.json();
+
+  return data;
+}
