@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Image from "next/legacy/image";
 import React from "react";
@@ -8,25 +8,29 @@ import { AiFillCaretDown } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 
 function Header() {
-  const router = useRouter()
+  const router = useRouter();
   const size = 20;
   return (
-    <nav className="fixed bg-gradient-to-b from-5% from-[#141414] w-full px-12 drop-shadow-md text-white box-sizing border-box h-20 flex items-center justify-between z-50">
-      <div className="flex flex-row gap-6 child-hover:cursor-pointer child-hover:text-slate-400 text-sm">
-        <Image
-          src={"/images/logo.png"}
-          alt="logo"
-          width={100}
-          height={20}
-          className="w-[100px]"
-          onClick={()=>router.push('/')}
-        />
-        <p>Home</p>
-        <p>TV Shows</p>
-        <p>Movies</p>
-        <p>New & Popular</p>
-        <p>My List</p>
-        <p>Browse by Languages</p>
+    <nav className="fixed bg-gradient-to-b from-5% from-[#141414] w-full px-6 drop-shadow-md text-white box-sizing border-box h-20 flex items-center justify-between z-50 gap-6">
+      <div className="flex flex-row gap-6  text-sm">
+        <span className=" w-40 justify-center flex relative min-w-60 h-10">
+          <Image
+            src={"/images/logo.png"}
+            alt="logo"
+            layout="fill"
+            priority
+            className="object-contain"
+            onClick={() => router.push("/")}
+          />
+        </span>
+        <div className="md:flex hidden flex-row gap-6 flex-nowrap text-center justify-center items-center child-hover:cursor-pointer child-hover:text-slate-400 child:transition-all child:duration-150">
+          <p>Home</p>
+          <p>TV Shows</p>
+          <p>Movies</p>
+          <p>New & Popular</p>
+          <p>My List</p>
+          <p>Browse by Languages</p>
+        </div>
       </div>
       <div className="flex flex-row gap-5 justify-between items-center child-hover:cursor-pointer">
         <BsSearch size={size} />

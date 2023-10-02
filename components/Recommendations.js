@@ -3,7 +3,6 @@ import { useRouter } from "next/navigation";
 import React from "react";
 
 function Recommendation({ movies }) {
-  console.log(movies.length, "movies");
   const router = useRouter();
   return (
     <div className="w-[80%] bg-white p-8 flex flex-col gap-4 rounded-md min-h-8">
@@ -36,7 +35,7 @@ function Recommendation({ movies }) {
               </div>
             ))
           ) : (
-            <p className="text-black">There is no movie recommendations</p>
+            <p className="text-black">There are no movie recommendations</p>
           )}
         </div>
       </div>

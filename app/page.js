@@ -10,6 +10,7 @@ import {
   getPopular,
   getUpcoming,
 } from "@/utils";
+import bannerMovies from '../asset/banner-movies.json'
 
 export default function Home() {
   const [movies, setMovies] = React.useState([]);
@@ -20,9 +21,9 @@ export default function Home() {
   const [banner, setBanner] = React.useState({});
 
   const carousel = [
-    { id: 0, title: "New releases", list: movies },
-    { id: 1, title: "Now playing", list: nowPlaying },
-    { id: 2, title: "Top rated", list: toprated },
+    { id: 0, title: "New Releases", list: movies },
+    { id: 1, title: "Now Playing", list: nowPlaying },
+    { id: 2, title: "Top Rated", list: toprated },
     { id: 3, title: "Upcoming", list: upcoming },
   ];
 
@@ -40,7 +41,7 @@ export default function Home() {
       setNowPlaying(nowPlaying);
 
       const banner =
-        movies.results[Math.floor(Math.random() * movies.results.length)];
+        bannerMovies[Math.floor(Math.random() * bannerMovies.length)];
       setBanner(banner);
     })();
   }, []);
