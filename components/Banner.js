@@ -22,7 +22,7 @@ function Banner({ randMovie }) {
         </div>
         <div className="w-full flex relative">
           <div className="flex flex-col w-full absolut gap-6 z-10 text-white px-10">
-            <p className="md:text-5xl text-3xl w-4/5 hover:cursor-pointer">
+            <p className="md:text-5xl text-3xl w-4/5">
               {randMovie.title}
             </p>
             <p className="md:w-2/5 w-full">

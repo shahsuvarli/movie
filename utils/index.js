@@ -79,8 +79,8 @@ export async function getGenre() {
   return cleanData;
 }
 
-export async function getMovie(movie_id) {
-  const response = await fetch(`/api/movie/${movie_id}`, {
+export async function getMovie(movie_id, media_type) {
+  const response = await fetch(`/api/${media_type}/${movie_id}`, {
     cache: "no-cache",
     method: "GET",
     headers: {
@@ -96,8 +96,8 @@ export async function getMovie(movie_id) {
   return data;
 }
 
-export async function getKeywords(movie_id) {
-  const response = await fetch(`/api/movie/${movie_id}/keywords`, {
+export async function getKeywords(movie_id, media_type) {
+  const response = await fetch(`/api/${media_type}/${movie_id}/keywords`, {
     cache: "no-cache",
     method: "GET",
     headers: {
@@ -114,8 +114,8 @@ export async function getKeywords(movie_id) {
   return data;
 }
 
-export async function getCredits(movie_id) {
-  const response = await fetch(`/api/movie/${movie_id}/credits/`, {
+export async function getCredits(movie_id, media_type) {
+  const response = await fetch(`/api/${media_type}/${movie_id}/credits/`, {
     cache: "no-cache",
     method: "GET",
     headers: { "Content-Type": "application/json" },
@@ -130,12 +130,15 @@ export async function getCredits(movie_id) {
   return data;
 }
 
-export async function getRecommendations(movie_id) {
-  const response = await fetch(`/api/movie/${movie_id}/recommendations`, {
-    cache: "no-cache",
-    method: "GET",
-    headers: { "Content-Type": "application/json" },
-  });
+export async function getRecommendations(movie_id, media_type) {
+  const response = await fetch(
+    `/api/${media_type}/${movie_id}/recommendations`,
+    {
+      cache: "no-cache",
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    }
+  );
 
   if (!response.ok) {
     throw new Error("Failed to fetch the movie recommendations data");
@@ -146,8 +149,8 @@ export async function getRecommendations(movie_id) {
   return data;
 }
 
-export async function getVideos(movie_id) {
-  const response = await fetch(`/api/movie/${movie_id}/videos`, {
+export async function getVideos(movie_id, media_type) {
+  const response = await fetch(`/api/${media_type}/${movie_id}/videos`, {
     cache: "no-cache",
     method: "GET",
     headers: { "Content-Type": "application/json" },
