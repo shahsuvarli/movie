@@ -13,7 +13,7 @@ function Videos({ videos }) {
               width={300}
               height={200}
               title={item.name}
-              src={`https://www.youtube.com/embed/${item.key}?enablejsapi=1`}
+              src={`https://www.youtube.com/embed/${item.key}`}
               key={item.id}
               allow="accelerometer; fullscreen"
               className="rounded-md"

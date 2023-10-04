@@ -78,7 +78,6 @@ function Person({ params }) {
                     Number(b.release_date.slice(0, 4))
                 )
                 .reverse()
-                .slice(0, 10)
                 .map((item) => (
                   <span
                     className="flex flex-row gap-2 text-white rounded-md px-2 py-1 border-slate-500 bg-white"
@@ -174,7 +173,9 @@ function Person({ params }) {
                     >
                       <div
                         className="rounded-md w-40 h-68 relative gap-1 flex flex-col"
-                        onClick={() => router.push(`/movie-detail/${item.id}`)}
+                        onClick={() =>
+                          router.push(`/${item.media_type}-detail/${item.id}`)
+                        }
                       >
                         <Image
                           src={
@@ -184,11 +185,11 @@ function Person({ params }) {
                           }
                           width={250}
                           height={150}
-                          alt={`${item.title}-movie-poster`}
+                          alt={`${item.title || item.name}-movie-poster`}
                           className="rounded-md w-42 h-60 object-cover hover:cursor-pointer"
                         />
                         <p className="text-slate-600 font-medium">
-                          {item.title || item.name}
+                          {item.title || item.name} ({item.media_type})
                         </p>
                         <p className="text-slate-400 text-sm">{item.job}</p>
                       </div>

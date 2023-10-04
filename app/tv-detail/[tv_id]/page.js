@@ -29,18 +29,18 @@ function MovieDetail({ params }) {
 
   useEffect(() => {
     (async () => {
-      const movie = await getMovie(params.movie_id);
+      const movie = await getMovie(params.tv_id, media_type);
 
-      const keywords = await getKeywords(params.movie_id, media_type);
-      const credits = await getCredits(params.movie_id, media_type);
+      const keywords = await getKeywords(params.tv_id, media_type);
+      const credits = await getCredits(params.tv_id, media_type);
       const recommendations = await getRecommendations(
-        params.movie_id,
+        params.tv_id,
         media_type
       );
-      const videos = await getVideos(params.movie_id,);
+      const videos = await getVideos(params.tv_id, media_type);
       const genres = movie.genres.map((item) => item.name).join(" • ");
       setCredits(credits);
-      setKeywords(keywords.keywords);
+      setKeywords(keywords.results);
       setGenres(genres);
       setRecommendations(recommendations.results);
       setVideos(videos.results);
@@ -78,7 +78,7 @@ function MovieDetail({ params }) {
               // fill
               priority
               className="object-cover rounded-t-lg w-full group-hover:blur-md transition-all duration-300"
-              alt={`${movie.title}-poster`}
+              alt={`${movie.name}-poster`}
               src={
                 movie.poster_path
                   ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
@@ -97,7 +97,7 @@ function MovieDetail({ params }) {
 
         <div className="flex gap-2 flex-col md:items-baseline items-start h-full">
           <span className="text-3xl mb-6 text-center w-full md:text-left">
-            {movie.title}{" "}
+            {movie.name}{" "}
             {movie.release_date ? `(${movie.release_date.slice(0, 4)})` : ""}
           </span>
 
@@ -121,7 +121,7 @@ function MovieDetail({ params }) {
             <span className="flex text-xs gap-2 text-slate-200">{genres}</span>
 
             <span className="flex flex-row gap-4">
-              {movie.production_countries.map((flag) => {
+              {movie.production_countries?.map((flag) => {
                 const flag_url = `https://flagsapi.com/${flag.iso_3166_1}/shiny/64.png`;
                 return (
                   <Image
@@ -129,8 +129,8 @@ function MovieDetail({ params }) {
                     width={30}
                     height={30}
                     priority
-                    alt={`${movie.title}-poster`}
-                    src={`https://flagsapi.com/${flag.iso_3166_1}/shiny/64.png`}
+                    alt={`${movie.name}-poster`}
+                    src={flag_url}
                     key={flag.iso_3166_1}
                   />
                 );
@@ -154,7 +154,7 @@ function MovieDetail({ params }) {
           </div>
         </div>
       </div>
-      <Crew credits={credits} />
+      <Crew credits={credits} movie={movie} />
       <Recommendation movies={recommendations} />
       <Videos videos={videos} />
       <div

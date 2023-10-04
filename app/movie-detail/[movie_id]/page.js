@@ -26,14 +26,19 @@ function MovieDetail({ params }) {
 
   const [expand, setExpand] = useState(false);
 
+  const media_type = "movie";
+
   useEffect(() => {
     (async () => {
-      const movie = await getMovie(params.movie_id);
+      const movie = await getMovie(params.movie_id, media_type);
 
-      const keywords = await getKeywords(params.movie_id);
-      const credits = await getCredits(params.movie_id);
-      const recommendations = await getRecommendations(params.movie_id);
-      const videos = await getVideos(params.movie_id);
+      const keywords = await getKeywords(params.movie_id, media_type);
+      const credits = await getCredits(params.movie_id, media_type);
+      const recommendations = await getRecommendations(
+        params.movie_id,
+        media_type
+      );
+      const videos = await getVideos(params.movie_id, media_type);
       const genres = movie.genres.map((item) => item.name).join(" • ");
       setCredits(credits);
       setKeywords(keywords.keywords);

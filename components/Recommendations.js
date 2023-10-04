@@ -16,7 +16,7 @@ function Recommendation({ movies }) {
               <div
                 key={item.id}
                 className="h-68 w-40 rounded-md gap-1"
-                onClick={() => router.push(`/movie-detail/${item.id}`)}
+                onClick={() => router.push(`/${item.media_type}-detail/${item.id}`)}
               >
                 <Image
                   src={
@@ -26,11 +26,11 @@ function Recommendation({ movies }) {
                   }
                   width={200}
                   height={400}
-                  alt={item.title}
+                  alt={item.name || item.title}
                   className="rounded-md w-full h-60 object-cover hover:cursor-pointer"
                 />
                 <p className="text-slate-600 font-medium text-md">
-                  {item.title}
+                  {item.name || item.title} ({item.media_type})
                 </p>
               </div>
             ))
