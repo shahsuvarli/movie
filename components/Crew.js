@@ -23,7 +23,7 @@ function Crew({ credits, movie }) {
           <div key={creator?.id}>
             <Image
               src={
-                creator?.profile_path
+                creator.profile_path
                   ? `https://image.tmdb.org/t/p/original${creator.profile_path}`
                   : "https://fakeimg.pl/200x250/f1f1f1?text= &font=museo"
               }

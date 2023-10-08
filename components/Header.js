@@ -29,7 +29,7 @@ function Header() {
           <p>Movies</p>
           <p>New & Popular</p>
           <p>My List</p>
-          <p>Browse by Languages</p>
+          <p onClick={() => router.push("/languages")}>Browse by Languages</p>
         </div>
       </div>
       <div className="flex flex-row gap-5 justify-between items-center child-hover:cursor-pointer">

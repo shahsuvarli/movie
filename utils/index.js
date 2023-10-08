@@ -194,3 +194,19 @@ export async function getPersonShort(id) {
 
   return data;
 }
+
+export async function getLanguages() {
+  const response = await fetch("/api/configuration/languages", {
+    method: "GET",
+    cache: "no-cache",
+    headers: { "Content-Type": "application/json" },
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch list of languages");
+  }
+
+  const data = await response.json();
+
+  return data;
+}
