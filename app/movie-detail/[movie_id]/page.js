@@ -123,10 +123,8 @@ function MovieDetail({ params }) {
 
             <span className="flex flex-row gap-4">
               {movie.production_countries.map((flag) => {
-                const flag_url = `https://flagsapi.com/${flag.iso_3166_1}/shiny/64.png`;
                 return (
                   <Image
-                    // fill
                     width={30}
                     height={30}
                     priority

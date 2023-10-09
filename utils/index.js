@@ -210,3 +210,22 @@ export async function getLanguages() {
 
   return data;
 }
+
+export async function getLanguage(code, page) {
+  const response = await fetch(
+    `/api/configuration/languages/lang?code=${code}&page=${page}`,
+    {
+      method: "GET",
+      cache: "no-cache",
+      headers: { "Content-Type": "application/json" },
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch language");
+  }
+
+  const data = await response.json();
+
+  return data;
+}

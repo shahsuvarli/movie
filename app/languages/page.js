@@ -1,9 +1,11 @@
 "use client";
 
 import { getLanguages } from "@/utils";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 function Languages() {
+  const router = useRouter();
   const [langs, setLangs] = useState();
   const [selectedLangs, setSelectedLangs] = useState([]);
 
@@ -20,7 +22,6 @@ function Languages() {
     const newLangs = langs.filter((item) =>
       item.name.toLowerCase().includes(input)
     );
-    console.log(input);
     setSelectedLangs(newLangs);
   };
 
@@ -44,6 +45,11 @@ function Languages() {
           <div
             className="border-[0.5px] border-slate-200 p-2 hover:cursor-pointer w-full hover:bg-white hover:text-black hover:pl-8 transition-all duration-500 active:text-sm h-[43px] flex items-center"
             key={item.code}
+            onClick={() =>
+              router.push(
+                `/languages/lang?code=${item.code}&lang=${item.name}&page=1`
+              )
+            }
           >
             {item.name}
           </div>
