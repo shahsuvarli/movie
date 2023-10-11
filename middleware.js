@@ -1,9 +1,3 @@
-import { NextResponse } from "next/server";
+export { default } from "next-auth/middleware";
 
-export function middleware(request) {
-  return NextResponse.redirect(new URL("/auth", request.url));
-}
-
-export const config = {
-  matcher: "/efe",
-};
+export const config = { matcher: ["/"] };

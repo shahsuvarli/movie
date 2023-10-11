@@ -6,6 +6,7 @@ import { BsSearch } from "react-icons/bs";
 import { FiBell } from "react-icons/fi";
 import { AiFillCaretDown } from "react-icons/ai";
 import { useRouter } from "next/navigation";
+import { signOut } from "next-auth/react";
 
 function Header() {
   const router = useRouter();
@@ -41,6 +42,7 @@ function Header() {
           width={32}
           height={32}
           className="rounded-md"
+          onClick={() => signOut()}
         />
         <AiFillCaretDown size={16} className="-ml-2" />
       </div>

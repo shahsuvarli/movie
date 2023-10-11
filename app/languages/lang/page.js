@@ -29,7 +29,6 @@ function Language() {
 
   const getData = async () => {
     const movies = await getLanguage(code, page);
-    console.log(movies);
     setMovies(movies);
   };
 
