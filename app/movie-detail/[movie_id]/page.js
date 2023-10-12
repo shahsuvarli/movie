@@ -12,6 +12,7 @@ import {
   getVideos,
 } from "@/utils";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { FaImdb } from "react-icons/fa";
 import { MdOutlineZoomOutMap } from "react-icons/md";

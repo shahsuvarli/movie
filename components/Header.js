@@ -7,6 +7,7 @@ import { FiBell } from "react-icons/fi";
 import { AiFillCaretDown } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 import { signOut } from "next-auth/react";
+import { RiShutDownLine } from "react-icons/ri";
 
 function Header() {
   const router = useRouter();
@@ -34,6 +35,7 @@ function Header() {
         </div>
       </div>
       <div className="flex flex-row gap-5 justify-between items-center child-hover:cursor-pointer">
+        <RiShutDownLine size={25} color="red" onClick={() => signOut()} />
         <BsSearch size={size} />
         <p className="text-sm">Kids</p>
         <FiBell size={size} />
@@ -42,7 +44,6 @@ function Header() {
           width={32}
           height={32}
           className="rounded-md"
-          onClick={() => signOut()}
         />
         <AiFillCaretDown size={16} className="-ml-2" />
       </div>

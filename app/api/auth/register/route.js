@@ -13,7 +13,7 @@ export async function POST(request) {
         values (${email}, ${hashedPassword})
     `;
   } catch (e) {
-    console.log({ e });
+    return NextResponse.json({ message: "failed to signup" });
   }
 
   return NextResponse.json({ message: "success" });

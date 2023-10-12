@@ -14,12 +14,10 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const session = await getServerSession();
-  console.log(session, "session");
   return (
     <html lang="en">
       <body className={`${inter.className} bg-[#141414]`}>
         <nav>{!!session && <Header />}</nav>
-
         {children}
       </body>
     </html>

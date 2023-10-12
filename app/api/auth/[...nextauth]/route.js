@@ -27,15 +27,12 @@ const handler = NextAuth({
             select * from users where email=${credentials?.email}
         `;
 
-        // console.log(response)
-
         const user = response.rows[0];
 
         const passwordCorrect = await compare(
           credentials?.password,
           user.password
         );
-        console.log(user, passwordCorrect);
 
         if (passwordCorrect) {
           return {
@@ -43,8 +40,6 @@ const handler = NextAuth({
             email: user.email,
           };
         }
-
-        console.log(passwordCorrect, "pass");
 
         return null;
       },
