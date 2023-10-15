@@ -28,7 +28,7 @@ function Banner({ randMovie }) {
             <p className="md:w-2/5 w-full">
               {randMovie.overview.split(".")[0]}
             </p>
-            <div className="flex  gap-4">
+            <div className="flex gap-4">
               <button
                 className="bg-white text-black min-w-40 h-10 px-4 rounded flex flex-row items-center justify-evenly hover:cursor-pointer gap-2"
                 onClick={() => router.push(`/movie-detail/${randMovie.id}`)}

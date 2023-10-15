@@ -8,6 +8,7 @@ import { AiFillCaretDown } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 import { signOut } from "next-auth/react";
 import { RiShutDownLine } from "react-icons/ri";
+import { MdLanguage } from "react-icons/md";
 
 function Header() {
   const router = useRouter();
@@ -15,7 +16,7 @@ function Header() {
   return (
     <nav className="fixed bg-gradient-to-b from-5% from-[#141414] w-full px-6 drop-shadow-md text-white box-sizing border-box h-20 flex items-center justify-between z-50 gap-6">
       <div className="flex flex-row gap-6  text-sm">
-        <span className=" w-40 justify-center flex relative min-w-60 h-10">
+        <span className="w-36 justify-center flex relative min-w-60 h-10">
           <Image
             src={"/images/logo.png"}
             alt="logo"
@@ -35,10 +36,16 @@ function Header() {
         </div>
       </div>
       <div className="flex flex-row gap-5 justify-between items-center child-hover:cursor-pointer">
-        <RiShutDownLine size={25} color="red" onClick={() => signOut()} />
-        <BsSearch size={size} />
-        <p className="text-sm">Kids</p>
-        <FiBell size={size} />
+        <RiShutDownLine size={25} color="white" onClick={() => signOut()} />
+        <MdLanguage
+          size={28}
+          color="white"
+          onClick={() => router.push("/languages")}
+          className="md:hidden block"
+        />
+        <BsSearch size={size} className="md:block hidden" />
+        <p className="text-sm md:block hidden">Kids</p>
+        <FiBell size={size} className="md:block hidden" />
         <Image
           src={"https://avatars.githubusercontent.com/u/46631807?v=4"}
           width={32}

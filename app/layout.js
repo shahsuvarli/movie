@@ -17,7 +17,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} bg-[#141414]`}>
-        <nav>{!!session && <Header />}</nav>
+        {!!session && <Header />}
         {children}
       </body>
     </html>

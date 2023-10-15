@@ -10,7 +10,7 @@ import {
   getPopular,
   getUpcoming,
 } from "@/utils";
-import bannerMovies from '../asset/banner-movies.json'
+import bannerMovies from "../asset/banner-movies.json";
 
 export default function Home() {
   const [movies, setMovies] = React.useState([]);

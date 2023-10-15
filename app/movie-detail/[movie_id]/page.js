@@ -12,7 +12,6 @@ import {
   getVideos,
 } from "@/utils";
 import Image from "next/image";
-import { redirect } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { FaImdb } from "react-icons/fa";
 import { MdOutlineZoomOutMap } from "react-icons/md";
@@ -67,11 +66,10 @@ function MovieDetail({ params }) {
             : "https://fakeimg.pl/200x200/f1f1f1?text= &font=museo"
         }
       />
-      <div></div>
       <div className="w-[80%] min-h-[500px] bg-[#1414147e] flex md:flex-row md:justify-normal p-8 gap-8 box-border items-center justify-center flex-col border-[0.5px] border-slate-300 rounded-md">
         <div className="border-[0.5px] border-slate-300 rounded-md">
           <span
-            className="h-5/6 min-h-[350px] w-[300px] relative  hover:cursor-pointer transition-all duration-200 flex flex-col bg-transparent gap-2 items-center justify-center group"
+            className="h-5/6 min-h-[350px] w-[300px] relative hover:cursor-pointer transition-all duration-200 flex flex-col bg-transparent gap-2 items-center justify-center group"
             onClick={() => setExpand(true)}
           >
             <Image
