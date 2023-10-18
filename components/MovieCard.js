@@ -23,7 +23,7 @@ function MovieCard({ movie, genres }) {
     >
       <div className="w-[216px] hover:cursor-pointer group-hover:scale-[1.5] transition duration-500 rounded-md">
         <img
-          src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+          src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
           className="rounded-md group-hover:rounded-b-none"
         />
         <div className="hidden group-hover:flex min-h-20 flex-col pt-2 px-2 pb-2 bg-[#2b2b2b] rounded-b-md">

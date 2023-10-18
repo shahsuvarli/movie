@@ -24,7 +24,7 @@ function Crew({ credits, movie }) {
             <Image
               src={
                 creator?.profile_path
-                  ? `https://image.tmdb.org/t/p/original${creator.profile_path}`
+                  ? `https://image.tmdb.org/t/p/w500/${creator.profile_path}`
                   : "https://fakeimg.pl/200x250/f1f1f1?text= &font=museo"
               }
               width={150}
@@ -47,7 +47,7 @@ function Crew({ credits, movie }) {
                 <Image
                   src={
                     item.profile_path
-                      ? `https://image.tmdb.org/t/p/original${item.profile_path}`
+                      ? `https://image.tmdb.org/t/p/w500/${item.profile_path}`
                       : "https://fakeimg.pl/200x200/f1f1f1?text= &font=museo"
                   }
                   width={150}

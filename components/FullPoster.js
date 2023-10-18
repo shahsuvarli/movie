@@ -11,7 +11,7 @@ function FullPoster({ image }) {
         alt={`poster`}
         src={
           image
-            ? `https://image.tmdb.org/t/p/original${image}`
+            ? `https://image.tmdb.org/t/p/w500/${image}`
             : "https://fakeimg.pl/200x200/f1f1f1?text= &font=museo"
         }
       />

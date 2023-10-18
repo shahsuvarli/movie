@@ -35,7 +35,7 @@ function Person({ params }) {
             alt={`${short.name}-poster`}
             src={
               short.profile_path
-                ? `https://image.tmdb.org/t/p/original${short.profile_path}`
+                ? `https://image.tmdb.org/t/p/w500/${short.profile_path}`
                 : "https://fakeimg.pl/200x200/f1f1f1?text= &font=museo"
             }
           />
@@ -90,7 +90,7 @@ function Person({ params }) {
                       <Image
                         src={
                           item.poster_path
-                            ? `https://image.tmdb.org/t/p/original${item.poster_path}`
+                            ? `https://image.tmdb.org/t/p/w500/${item.poster_path}`
                             : "https://fakeimg.pl/200x200/f1f1f1?text= &font=museo"
                         }
                         width={250}
@@ -134,7 +134,7 @@ function Person({ params }) {
                         <Image
                           src={
                             item.poster_path
-                              ? `https://image.tmdb.org/t/p/original${item.poster_path}`
+                              ? `https://image.tmdb.org/t/p/w500/${item.poster_path}`
                               : "https://fakeimg.pl/200x200/f1f1f1?text= &font=museo"
                           }
                           width={250}
@@ -180,7 +180,7 @@ function Person({ params }) {
                         <Image
                           src={
                             item.poster_path
-                              ? `https://image.tmdb.org/t/p/original${item.poster_path}`
+                              ? `https://image.tmdb.org/t/p/w500/${item.poster_path}`
                               : "https://fakeimg.pl/200x200/f1f1f1?text= &font=museo"
                           }
                           width={250}

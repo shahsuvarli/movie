@@ -61,7 +61,7 @@ function MovieDetail({ params }) {
         className="absolute top-0 w-full -z-50 object-cover opacity-25"
         src={
           movie.backdrop_path
-            ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
+            ? `https://image.tmdb.org/t/p/original/${movie.backdrop_path}`
             : "https://fakeimg.pl/200x200/f1f1f1?text= &font=museo"
         }
       />
@@ -81,7 +81,7 @@ function MovieDetail({ params }) {
               alt={`${movie.name}-poster`}
               src={
                 movie.poster_path
-                  ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
+                  ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
                   : "https://fakeimg.pl/200x200/f1f1f1?text= &font=museo"
               }
             />

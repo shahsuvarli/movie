@@ -61,7 +61,7 @@ function Language() {
                   <Image
                     src={
                       item.poster_path
-                        ? `https://image.tmdb.org/t/p/original${item.poster_path}`
+                        ? `https://image.tmdb.org/t/p/w500/${item.poster_path}`
                         : "https://fakeimg.pl/200x200/f1f1f1?text= &font=museo"
                     }
                     width={250}

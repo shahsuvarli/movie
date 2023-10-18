@@ -17,7 +17,7 @@ function Banner({ randMovie }) {
             objectFit="cover"
             alt="background"
             className="absolute top-0 w-full -z-50"
-            src={`https://image.tmdb.org/t/p/original${randMovie.backdrop_path}`}
+            src={`https://image.tmdb.org/t/p/original/${randMovie.backdrop_path}`}
           />
         </div>
         <div className="w-full flex relative">

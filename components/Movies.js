@@ -13,7 +13,7 @@ function Movies({ data }) {
           >
             <div className="w-[300px] rounded-md hover:z-1000 hover:scale-200 transition duration-200 border bg-white ">
               <Image
-                src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`}
+                src={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`}
                 width={200}
                 height={200}
                 className="rounded-md hover:cursor-pointer hover:z-1000 translate-x-0 translate-y-0"
