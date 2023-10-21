@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { signOut } from "next-auth/react";
 import { RiShutDownLine } from "react-icons/ri";
 import { MdLanguage } from "react-icons/md";
+import Link from "next/link";
 
 function Header() {
   const router = useRouter();
@@ -46,12 +47,14 @@ function Header() {
         <BsSearch size={size} className="md:block hidden" />
         <p className="text-sm md:block hidden">Kids</p>
         <FiBell size={size} className="md:block hidden" />
-        <Image
-          src={"https://avatars.githubusercontent.com/u/46631807?v=4"}
-          width={32}
-          height={32}
-          className="rounded-md"
-        />
+        <Link href={"http://shahsuvarli.com"} target="_blank">
+          <Image
+            src={"https://avatars.githubusercontent.com/u/46631807?v=4"}
+            width={32}
+            height={32}
+            className="rounded-md"
+          />
+        </Link>
         <AiFillCaretDown size={16} className="-ml-2" />
       </div>
     </nav>

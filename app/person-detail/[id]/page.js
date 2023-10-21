@@ -25,8 +25,8 @@ function Person({ params }) {
 
   return (
     <div className="text-white pt-24 min-h-screen flex flex-col items-center relative gap-4 py-4">
-      <div className=" w-[90%] h-full flex flex-col gap-4">
-        <section className="border border-1 border-slate-500 p-4 flex flex-row gap-4 rounded-md">
+      <div className="w-[90%] h-full flex flex-col gap-4">
+        <section className="border border-1 border-slate-500 p-4 flex md:flex-row gap-4 rounded-md flex-col justify-center items-center">
           <Image
             width={500}
             height={500}
@@ -40,7 +40,7 @@ function Person({ params }) {
             }
           />
           <div className="flex flex-col gap-2">
-            <span className="flex flex-row gap-2 items-end">
+            <span className="flex md:flex-row gap-2 flex-col justify-start items-start">
               <h3 className="text-3xl">{short.name}</h3>
               <p className="text-xl text-slate-300">
                 {short.deathday

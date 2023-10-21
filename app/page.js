@@ -53,7 +53,7 @@ export default function Home() {
   return (
     <main className="z-100 relative">
       <Banner randMovie={banner} />
-      <div className="relative -mt-48 px-16 bg-gradient-to-t from-85% from-[#141414]">
+      <div className="relative -mt-48 px-8 bg-gradient-to-t from-85% from-[#141414]">
         {carousel.map(({ id, title, list }) => (
           <MoviesNew data={list} title={title} key={id} genres={genres} />
         ))}
