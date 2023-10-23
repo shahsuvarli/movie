@@ -5,6 +5,8 @@ export const config = {
     "/",
     "/languages",
     "/languages/lang",
-    "/movie-detail/(.*), '/person-detail/(.*)",'/tv-detail/(.*)'
+    "/movie-detail/(.*)",
+    "/person-detail/(.*)",
+    "/tv-detail/(.*)",
   ],
 };

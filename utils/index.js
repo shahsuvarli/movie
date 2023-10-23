@@ -2,7 +2,6 @@
 
 export async function getMovies() {
   const response = await fetch("/api/get-movies", {
-    cache: "no-cache",
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -18,7 +17,6 @@ export async function getMovies() {
 
 export async function getNowPlaying() {
   const response = await fetch("/api/now-playing", {
-    cache: "no-cache",
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -33,7 +31,6 @@ export async function getNowPlaying() {
 
 export async function getPopular() {
   const response = await fetch("/api/popular", {
-    cache: "no-cache",
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -48,7 +45,6 @@ export async function getPopular() {
 
 export async function getUpcoming() {
   const response = await fetch("/api/upcoming", {
-    cache: "no-cache",
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -63,7 +59,6 @@ export async function getUpcoming() {
 
 export async function getGenre() {
   const response = await fetch("/api/genres", {
-    cache: "no-cache",
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -81,7 +76,6 @@ export async function getGenre() {
 
 export async function getMovie(movie_id, media_type) {
   const response = await fetch(`/api/${media_type}/${movie_id}`, {
-    cache: "no-cache",
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -98,7 +92,6 @@ export async function getMovie(movie_id, media_type) {
 
 export async function getKeywords(movie_id, media_type) {
   const response = await fetch(`/api/${media_type}/${movie_id}/keywords`, {
-    cache: "no-cache",
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -116,7 +109,6 @@ export async function getKeywords(movie_id, media_type) {
 
 export async function getCredits(movie_id, media_type) {
   const response = await fetch(`/api/${media_type}/${movie_id}/credits/`, {
-    cache: "no-cache",
     method: "GET",
     headers: { "Content-Type": "application/json" },
   });
@@ -134,7 +126,6 @@ export async function getRecommendations(movie_id, media_type) {
   const response = await fetch(
     `/api/${media_type}/${movie_id}/recommendations`,
     {
-      cache: "no-cache",
       method: "GET",
       headers: { "Content-Type": "application/json" },
     }
@@ -151,7 +142,6 @@ export async function getRecommendations(movie_id, media_type) {
 
 export async function getVideos(movie_id, media_type) {
   const response = await fetch(`/api/${media_type}/${movie_id}/videos`, {
-    cache: "no-cache",
     method: "GET",
     headers: { "Content-Type": "application/json" },
   });
@@ -166,8 +156,7 @@ export async function getVideos(movie_id, media_type) {
 }
 
 export async function getPersonLong(id) {
-  const response = await fetch(`/api/person/long/${id}`, {
-    cache: "no-cache",
+  const response = await fetch(`http://localhost:3000/api/person/long/${id}`, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   });
@@ -181,11 +170,11 @@ export async function getPersonLong(id) {
 }
 
 export async function getPersonShort(id) {
-  const response = await fetch(`/api/person/short/${id}`, {
-    cache: "no-cache",
+  const response = await fetch(`http://localhost:3000/api/person/short/${id}`, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   });
+
   if (!response.ok) {
     throw new Error("Failed to fetch the person data (short)");
   }
@@ -198,7 +187,6 @@ export async function getPersonShort(id) {
 export async function getLanguages() {
   const response = await fetch("/api/configuration/languages", {
     method: "GET",
-    cache: "no-cache",
     headers: { "Content-Type": "application/json" },
   });
 
@@ -216,7 +204,6 @@ export async function getLanguage(code, page) {
     `/api/configuration/languages/lang?code=${code}&page=${page}`,
     {
       method: "GET",
-      cache: "no-cache",
       headers: { "Content-Type": "application/json" },
     }
   );

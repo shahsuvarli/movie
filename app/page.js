@@ -28,7 +28,7 @@ export default function Home() {
   ];
 
   useEffect(() => {
-    (async () => {
+    const getData = async () => {
       const movies = await getMovies();
       const genres = await getGenre();
       const toprated = await getPopular();
@@ -43,7 +43,9 @@ export default function Home() {
       const banner =
         bannerMovies[Math.floor(Math.random() * bannerMovies.length)];
       setBanner(banner);
-    })();
+    };
+
+    getData();
   }, []);
 
   if (!movies.results) {
