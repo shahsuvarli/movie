@@ -54,6 +54,7 @@ function LangMovies({ movies }) {
                     }
                     width={250}
                     height={150}
+                    sizes="100px"
                     alt={`${item.title}-movie-poster`}
                     className="rounded-md w-42 h-60 object-cover hover:cursor-pointer"
                   />
