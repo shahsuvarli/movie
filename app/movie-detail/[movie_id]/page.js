@@ -22,9 +22,9 @@ export default async function MovieDetail({ params }) {
     <MovieCom
       movie={movie}
       credits={credits}
-      recommendations={recommendations}
-      keywords={keywords}
-      videos={videos}
+      recommendations={recommendations.results}
+      keywords={keywords.keywords}
+      videos={videos.results}
       genres={genres}
     />
   );

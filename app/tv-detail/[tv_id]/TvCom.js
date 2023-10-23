@@ -102,7 +102,7 @@ function TvCom({ movie, credits, recommendations, videos, keywords, genres }) {
           </p>
 
           <div className="flex flex-row flex-wrap gap-2 mt-4 justify-center md:justify-start">
-            {keywords.results.map((item) => (
+            {keywords.map((item) => (
               <span
                 key={item.id}
                 className="bg-[#e8e8e8] rounded-md px-2 text-slate-600 text-sm hover:cursor-pointer hover:bg-slate-500 hover:text-white"

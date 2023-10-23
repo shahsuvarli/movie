@@ -1,12 +1,15 @@
 // `https://api.themoviedb.org/3/discover/movie?api_key=1b0710c2d7ea099af51c2b0b40d2d35f`,
 
 export async function getMovies() {
-  const response = await fetch("http://localhost:3000/api/get-movies", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
 
   if (!response.ok) {
     throw new Error("Failed to fetch movie list");
@@ -16,12 +19,15 @@ export async function getMovies() {
 }
 
 export async function getNowPlaying() {
-  const response = await fetch("http:localhost:3000/api/now-playing", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  const response = await fetch(
+    `https://api.themoviedb.org/3/discover/movie/?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
   if (!response.ok) {
     throw new Error("Failed to fetch now playing data");
   }
@@ -30,12 +36,15 @@ export async function getNowPlaying() {
 }
 
 export async function getPopular() {
-  const response = await fetch("http://localhost:3000/api/popular", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
   if (!response.ok) {
     throw new Error("Failed to fetch popular movie data");
   }
@@ -44,12 +53,15 @@ export async function getPopular() {
 }
 
 export async function getUpcoming() {
-  const response = await fetch("http://localhost:3000/api/upcoming", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
   if (!response.ok) {
     throw new Error("Failed to fetch upcoming movie data");
   }
@@ -58,12 +70,15 @@ export async function getUpcoming() {
 }
 
 export async function getGenre() {
-  const response = await fetch("http://localhost:3000/api/genres", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  const response = await fetch(
+    `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
   if (!response.ok) {
     throw new Error("Failed to fetch genre data");
   }
@@ -76,7 +91,7 @@ export async function getGenre() {
 
 export async function getMovie(movie_id, media_type) {
   const response = await fetch(
-    `http://localhost:3000/api/${media_type}/${movie_id}`,
+    `https://api.themoviedb.org/3/${media_type}/${movie_id}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
     {
       method: "GET",
       headers: {
@@ -95,7 +110,7 @@ export async function getMovie(movie_id, media_type) {
 
 export async function getKeywords(movie_id, media_type) {
   const response = await fetch(
-    `http://localhost:3000/api/${media_type}/${movie_id}/keywords`,
+    `https://api.themoviedb.org/3/${media_type}/${movie_id}/keywords?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
     {
       method: "GET",
       headers: {
@@ -115,7 +130,7 @@ export async function getKeywords(movie_id, media_type) {
 
 export async function getCredits(movie_id, media_type) {
   const response = await fetch(
-    `http://localhost:3000/api/${media_type}/${movie_id}/credits/`,
+    `https://api.themoviedb.org/3/${media_type}/${movie_id}/credits?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
     {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -133,7 +148,7 @@ export async function getCredits(movie_id, media_type) {
 
 export async function getRecommendations(movie_id, media_type) {
   const response = await fetch(
-    `http://localhost:3000/api/${media_type}/${movie_id}/recommendations`,
+    `https://api.themoviedb.org/3/${media_type}/${movie_id}/recommendations?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
     {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -151,7 +166,7 @@ export async function getRecommendations(movie_id, media_type) {
 
 export async function getVideos(movie_id, media_type) {
   const response = await fetch(
-    `http://localhost:3000/api/${media_type}/${movie_id}/videos`,
+    `https://api.themoviedb.org/3/${media_type}/${movie_id}/videos?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
     {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -168,10 +183,13 @@ export async function getVideos(movie_id, media_type) {
 }
 
 export async function getPersonLong(id) {
-  const response = await fetch(`http://localhost:3000/api/person/long/${id}`, {
-    method: "GET",
-    headers: { "Content-Type": "application/json" },
-  });
+  const response = await fetch(
+    `https://api.themoviedb.org/3/person/${id}/combined_credits?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
+    {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    }
+  );
   if (!response.ok) {
     throw new Error("Failed to fetch the person data (long)");
   }
@@ -182,10 +200,13 @@ export async function getPersonLong(id) {
 }
 
 export async function getPersonShort(id) {
-  const response = await fetch(`http://localhost:3000/api/person/short/${id}`, {
-    method: "GET",
-    headers: { "Content-Type": "application/json" },
-  });
+  const response = await fetch(
+    `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
+    {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    }
+  );
 
   if (!response.ok) {
     throw new Error("Failed to fetch the person data (short)");
@@ -198,7 +219,7 @@ export async function getPersonShort(id) {
 
 export async function getLanguages() {
   const response = await fetch(
-    "http://localhost:3000/api/configuration/languages",
+    `https://gist.githubusercontent.com/jrnk/8eb57b065ea0b098d571/raw/936a6f652ebddbe19b1d100a60eedea3652ccca6/ISO-639-1-language.json`,
     {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -216,7 +237,7 @@ export async function getLanguages() {
 
 export async function getLanguage(code, page) {
   const response = await fetch(
-    `http://localhost:3000/api/configuration/languages/lang?code=${code}&page=${page}`,
+    `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}&with_original_language=${code}&page=${page}`,
     {
       method: "GET",
       headers: { "Content-Type": "application/json" },

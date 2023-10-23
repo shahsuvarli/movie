@@ -20,9 +20,9 @@ export default async function MovieDetail({ params }) {
 
   return (
     <TvCom
-      keywords={keywords}
-      videos={videos}
-      recommendations={recommendations}
+      keywords={keywords.results}
+      videos={videos.results}
+      recommendations={recommendations.results}
       credits={credits}
       genres={genres}
       movie={movie}
