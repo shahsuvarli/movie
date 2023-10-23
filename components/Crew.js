@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -8,8 +10,8 @@ function Crew({ credits, movie }) {
   useEffect(() => {
     const creator =
       movie?.created_by ||
-      credits.crew.filter((item) => item.job === "Director");
-    setCreator(creator[0]);
+      credits.crew?.filter((item) => item.job === "Director");
+    setCreator(creator ? creator[0] : '');
   }, []);
 
   const router = useRouter();
@@ -32,7 +34,9 @@ function Crew({ credits, movie }) {
               alt={creator?.name || "director image"}
               className="rounded-md mb-2"
             />
-            <p className="text-slate-600 font-medium text-md">{creator?.name}</p>
+            <p className="text-slate-600 font-medium text-md">
+              {creator?.name}
+            </p>
             <p className="text-slate-400 text-md">Creator</p>
           </div>
         </div>

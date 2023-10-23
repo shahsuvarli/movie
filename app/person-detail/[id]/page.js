@@ -3,8 +3,6 @@ import React from "react";
 import PersonComp from "./PersonComp";
 
 export default async function Person({ params }) {
-  const wait = () => new Promise((resolve) => setTimeout(resolve, 2000));
-  await wait();
   const long = await getPersonLong(params.id);
   const short = await getPersonShort(params.id);
 

@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useEffect, useState } from "react";
 import { FaPlay } from "react-icons/fa";
 import { AiOutlinePlus } from "react-icons/ai";

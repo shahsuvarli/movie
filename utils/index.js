@@ -1,7 +1,7 @@
 // `https://api.themoviedb.org/3/discover/movie?api_key=1b0710c2d7ea099af51c2b0b40d2d35f`,
 
 export async function getMovies() {
-  const response = await fetch("/api/get-movies", {
+  const response = await fetch("http://localhost:3000/api/get-movies", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -16,7 +16,7 @@ export async function getMovies() {
 }
 
 export async function getNowPlaying() {
-  const response = await fetch("/api/now-playing", {
+  const response = await fetch("http:localhost:3000/api/now-playing", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -30,7 +30,7 @@ export async function getNowPlaying() {
 }
 
 export async function getPopular() {
-  const response = await fetch("/api/popular", {
+  const response = await fetch("http://localhost:3000/api/popular", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -44,7 +44,7 @@ export async function getPopular() {
 }
 
 export async function getUpcoming() {
-  const response = await fetch("/api/upcoming", {
+  const response = await fetch("http://localhost:3000/api/upcoming", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -58,7 +58,7 @@ export async function getUpcoming() {
 }
 
 export async function getGenre() {
-  const response = await fetch("/api/genres", {
+  const response = await fetch("http://localhost:3000/api/genres", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -75,12 +75,15 @@ export async function getGenre() {
 }
 
 export async function getMovie(movie_id, media_type) {
-  const response = await fetch(`/api/${media_type}/${movie_id}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  const response = await fetch(
+    `http://localhost:3000/api/${media_type}/${movie_id}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
   if (!response.ok) {
     throw new Error("Failed to fetch movie data");
   }
@@ -91,12 +94,15 @@ export async function getMovie(movie_id, media_type) {
 }
 
 export async function getKeywords(movie_id, media_type) {
-  const response = await fetch(`/api/${media_type}/${movie_id}/keywords`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  const response = await fetch(
+    `http://localhost:3000/api/${media_type}/${movie_id}/keywords`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
 
   if (!response.ok) {
     throw new Error("Failed to get the movie keywords data");
@@ -108,10 +114,13 @@ export async function getKeywords(movie_id, media_type) {
 }
 
 export async function getCredits(movie_id, media_type) {
-  const response = await fetch(`/api/${media_type}/${movie_id}/credits/`, {
-    method: "GET",
-    headers: { "Content-Type": "application/json" },
-  });
+  const response = await fetch(
+    `http://localhost:3000/api/${media_type}/${movie_id}/credits/`,
+    {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    }
+  );
 
   if (!response.ok) {
     throw new Error("Failed to fetch the movie credits data");
@@ -124,7 +133,7 @@ export async function getCredits(movie_id, media_type) {
 
 export async function getRecommendations(movie_id, media_type) {
   const response = await fetch(
-    `/api/${media_type}/${movie_id}/recommendations`,
+    `http://localhost:3000/api/${media_type}/${movie_id}/recommendations`,
     {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -141,10 +150,13 @@ export async function getRecommendations(movie_id, media_type) {
 }
 
 export async function getVideos(movie_id, media_type) {
-  const response = await fetch(`/api/${media_type}/${movie_id}/videos`, {
-    method: "GET",
-    headers: { "Content-Type": "application/json" },
-  });
+  const response = await fetch(
+    `http://localhost:3000/api/${media_type}/${movie_id}/videos`,
+    {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    }
+  );
 
   if (!response.ok) {
     throw new Error("Failed to fetch the movie videos data");
@@ -185,10 +197,13 @@ export async function getPersonShort(id) {
 }
 
 export async function getLanguages() {
-  const response = await fetch("/api/configuration/languages", {
-    method: "GET",
-    headers: { "Content-Type": "application/json" },
-  });
+  const response = await fetch(
+    "http://localhost:3000/api/configuration/languages",
+    {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    }
+  );
 
   if (!response.ok) {
     throw new Error("Failed to fetch list of languages");
@@ -201,7 +216,7 @@ export async function getLanguages() {
 
 export async function getLanguage(code, page) {
   const response = await fetch(
-    `/api/configuration/languages/lang?code=${code}&page=${page}`,
+    `http://localhost:3000/api/configuration/languages/lang?code=${code}&page=${page}`,
     {
       method: "GET",
       headers: { "Content-Type": "application/json" },

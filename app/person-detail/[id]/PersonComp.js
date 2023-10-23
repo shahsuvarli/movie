@@ -55,8 +55,8 @@ function PersonComp({ long, short }) {
               .filter((item) => item.poster_path && item.media_type === "movie")
               .sort(
                 (a, b) =>
-                  Number(a.release_date.slice(0, 4)) -
-                  Number(b.release_date.slice(0, 4))
+                  Number(a.release_date?.slice(0, 4)) -
+                  Number(b.release_date?.slice(0, 4))
               )
               .reverse()
               .map((item) => (
