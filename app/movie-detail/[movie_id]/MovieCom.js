@@ -102,7 +102,7 @@ function MovieCom({
             </span>
           </span>
 
-          <p className="text-wrap text-sm text-slate-300 text-center md:text-justify md:mr-[20%]">
+          <p className="text-wrap text-sm text-slate-300 text-center md:text-left md:mr-[20%]">
             {movie.overview || "There is no movie description"}
           </p>
 

@@ -43,7 +43,7 @@ function PersonComp({ long, short }) {
             <p className="text-slate-300">Place of birth:</p>
             <p>{short.place_of_birth || "no data"}</p>
           </span>
-          <p className="text-md text-slate-400 text-sm">{short.biography}</p>
+          <p className="text-md text-slate-400 text-sm text-center sm:text-left">{short.biography}</p>
         </div>
       </section>
 
