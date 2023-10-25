@@ -32,17 +32,17 @@ function MovieCom({
             : "https://fakeimg.pl/200x200/f1f1f1?text= &font=museo"
         }
       />
-      <div className="w-[80%] min-h-[500px] bg-[#1414147e] flex md:flex-row md:justify-normal p-8 gap-8 box-border items-center justify-center flex-col border-[0.5px] border-slate-300 rounded-md">
+      <div className="w-[80%] min-h-[500px] bg-[#1414147e] flex md:flex-row md:justify-normal p-8 gap-8 box-border items-center md:items-start justify-center flex-col border-[0.5px] border-slate-300 rounded-md">
         <div className="rounded-md">
           <span
             className="h-5/6 min-h-[350px] w-[300px] relative hover:cursor-pointer transition-all duration-200 flex flex-col bg-transparent gap-2 items-center justify-center group"
             onClick={() => setExpand(true)}
           >
             <Image
-              width={30}
+              width={190}
               height={20}
               priority
-              sizes="10px"
+              // sizes="200px"
               className="object-cover rounded-t-lg w-full group-hover:blur-md transition-all duration-300"
               alt={`${movie.title}-poster`}
               src={

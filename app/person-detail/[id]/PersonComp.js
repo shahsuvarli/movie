@@ -8,7 +8,7 @@ function PersonComp({ long, short }) {
   const router = useRouter();
   return (
     <div className="w-[90%] h-full flex flex-col gap-4">
-      <section className="border border-1 border-slate-500 p-4 flex md:flex-row gap-4 rounded-md flex-col justify-center items-center">
+      <section className="border border-1 border-slate-500 p-4 flex sm:flex-row gap-4 rounded-md flex-col justify-center items-center sm:justify-start sm:items-start">
         <Image
           width={500}
           height={500}
@@ -21,8 +21,8 @@ function PersonComp({ long, short }) {
               : "https://fakeimg.pl/200x200/f1f1f1?text= &font=museo"
           }
         />
-        <div className="flex flex-col gap-2">
-          <span className="flex md:flex-row gap-2 flex-col justify-start items-start">
+        <div className="flex flex-col gap-2 sm:justify-start sm:items-start justify-center items-center">
+          <span className="flex md:flex-row gap-2 flex-col sm:justify-start sm:items-start text-center">
             <h3 className="text-3xl">{short.name}</h3>
             <p className="text-xl text-slate-300">
               {short.deathday
