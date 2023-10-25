@@ -1,10 +1,10 @@
-'use client'
+"use client";
 
 import Banner from "@/components/Banner";
 import MoviesNew from "@/components/MoviesNew";
 import React from "react";
 
-function HomeCom({banner, carousel, genres}) {
+function HomeCom({ banner, carousel, genres }) {
   return (
     <main className="z-100 relative">
       <Banner randMovie={banner} />

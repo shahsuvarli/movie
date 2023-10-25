@@ -21,9 +21,10 @@ function MovieCom({
   return (
     <div className="text-white pt-24 min-h-screen flex flex-col justify-center items-center relative gap-4">
       <Image
-        width={2000}
-        height={2000}
+        width={100}
+        height={100}
         alt="background"
+        sizes="80vw"
         className="absolute top-0 w-full -z-50 object-cover opacity-25"
         src={
           movie.backdrop_path
@@ -38,9 +39,10 @@ function MovieCom({
             onClick={() => setExpand(true)}
           >
             <Image
-              width={300}
-              height={300}
+              width={30}
+              height={20}
               priority
+              sizes="10px"
               className="object-cover rounded-t-lg w-full group-hover:blur-md transition-all duration-300"
               alt={`${movie.title}-poster`}
               src={

@@ -8,17 +8,19 @@ function Videos({ videos }) {
       </p>
       <div className="flex flex-row  gap-2 box-border relative overflow-x-scroll overflow-y-scroll w-full">
         {videos.length ? (
-          videos.map((item) => (
-            <iframe
-              width={300}
-              height={200}
-              title={item.name}
-              src={`https://www.youtube.com/embed/${item.key}`}
-              key={item.id}
-              allow="accelerometer; fullscreen"
-              className="rounded-md"
-            ></iframe>
-          ))
+          videos
+            .slice(0, 3)
+            .map((item) => (
+              <iframe
+                width={300}
+                height={200}
+                title={item.name}
+                src={`https://www.youtube.com/embed/${item.key}`}
+                key={item.id}
+                allow="accelerometer;"
+                className="rounded-md"
+              ></iframe>
+            ))
         ) : (
           <p className="text-black">There are no movie videos</p>
         )}

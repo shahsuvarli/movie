@@ -31,6 +31,7 @@ function Crew({ credits, movie }) {
               }
               width={150}
               height={100}
+              sizes="100px"
               alt={creator?.name || "director image"}
               className="rounded-md mb-2"
             />
@@ -42,7 +43,7 @@ function Crew({ credits, movie }) {
         </div>
         <div className="flex flex-row overflow-x-scroll overflow-y-scroll bg-white h-[330px] w-full">
           <div className="flex flex-row justify-between gap-4 h-60">
-            {credits.cast?.map((item) => (
+            {credits.cast?.slice(0,6).map((item) => (
               <div
                 key={item.id}
                 className="rounded-md w-40 min-h-80"
@@ -54,8 +55,9 @@ function Crew({ credits, movie }) {
                       ? `https://image.tmdb.org/t/p/w500/${item.profile_path}`
                       : "https://fakeimg.pl/200x200/f1f1f1?text= &font=museo"
                   }
-                  width={150}
-                  height={150}
+                  width={50}
+                  height={10}
+                  sizes="100px"
                   alt={item.name}
                   className="rounded-md w-full h-full object-cover hover:cursor-pointer"
                 />

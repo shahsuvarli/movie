@@ -1,7 +1,7 @@
 "use client";
 
 import { useFormik } from "formik";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -44,14 +44,21 @@ function Form() {
   });
 
   return (
-    <div className="relative w-full h-screen bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
+    <div className="relative w-full h-screen bg-no-repeat bg-center bg-fixed bg-cover">
+      <Image
+        src={"/images/hero.jpg"}
+        fill
+        alt="login-bg"
+        className="h-full w-full bg-cover -z-20 object-cover"
+      />
       <div className="bg-black w-full h-full bg-opacity-50 p-10">
         <nav className="px-10 py-4 h-20 relative w-60">
           <Image
             src={"/images/logo.png"}
-            layout="fill"
+            fill
             alt="logo"
-            className="object-contain"
+            sizes="100px"
+            className="w-20"
           />
         </nav>
         <div className="flex justify-center">

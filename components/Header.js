@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/legacy/image";
+import Image from "next/image";
 import React from "react";
 import { BsSearch } from "react-icons/bs";
 import { FiBell } from "react-icons/fi";
@@ -21,9 +21,10 @@ function Header() {
           <Image
             src={"/images/logo.png"}
             alt="logo"
-            layout="fill"
+            fill
+            sizes="100px"
             priority
-            className="object-contain hover:cursor-pointer"
+            className="object-contain hover:cursor-pointer w-20"
             onClick={() => router.push("/")}
           />
         </span>
@@ -53,6 +54,7 @@ function Header() {
             width={32}
             height={32}
             className="rounded-md"
+            alt="user-avatar"
           />
         </Link>
         <AiFillCaretDown size={16} className="-ml-2" />

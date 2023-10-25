@@ -1,10 +1,11 @@
-'use client'
+"use client";
 
 import React, { useEffect, useState } from "react";
 import { FaPlay } from "react-icons/fa";
 import { AiOutlinePlus } from "react-icons/ai";
 import { SlLike } from "react-icons/sl";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 function MovieCard({ movie, genres }) {
   const router = useRouter();
@@ -24,9 +25,13 @@ function MovieCard({ movie, genres }) {
       onClick={() => router.push(`/movie-detail/${movie.id}`)}
     >
       <div className="w-[216px] hover:cursor-pointer group-hover:scale-[1.5] transition duration-500 rounded-md">
-        <img
+        <Image
+          width={256}
+          height={100}
+          sizes="200px"
+          alt={movie.title}
           src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
-          className="rounded-md group-hover:rounded-b-none"
+          className="rounded-md group-hover:rounded-b-none h-auto"
         />
         <div className="hidden group-hover:flex min-h-20 flex-col pt-2 px-2 pb-2 bg-[#2b2b2b] rounded-b-md">
           <div className="flex flex-row justify-center">

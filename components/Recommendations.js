@@ -12,7 +12,7 @@ function Recommendation({ movies }) {
       <div className="flex flex-row justify-between gap-2 box-border relative overflow-x-scroll overflow-y-scroll w-full">
         <div className="flex justify-between flex-row gap-2 h-full">
           {movies.length ? (
-            movies.map((item) => (
+            movies.slice(0,6).map((item) => (
               <div
                 key={item.id}
                 className="h-68 w-40 rounded-md gap-1"
@@ -24,8 +24,9 @@ function Recommendation({ movies }) {
                       ? `https://image.tmdb.org/t/p/w500/${item.poster_path}`
                       : "https://fakeimg.pl/200x200/f1f1f1?text= &font=museo"
                   }
-                  width={200}
-                  height={400}
+                  width={150}
+                  height={100}
+                  sizes="100px"
                   alt={item.name || item.title}
                   className="rounded-md w-full h-60 object-cover hover:cursor-pointer"
                 />

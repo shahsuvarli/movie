@@ -2,7 +2,7 @@
 
 import { useFormik } from "formik";
 import { signIn } from "next-auth/react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -43,18 +43,26 @@ function Form() {
   });
 
   return (
-    <div className="relative w-full h-screen bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
-      <div className="bg-black w-full h-full bg-opacity-50 p-10">
+    <div className="relative w-full h-screen">
+      <Image
+        src={"/images/hero.jpg"}
+        fill
+        alt="login-bg"
+        sizes="100vw"
+        className="h-full w-full object-cover -z-20"
+      />
+      <div className="w-full h-full bg-opacity-50 p-10">
         <nav className="px-10 py-4 h-20 relative w-60">
           <Image
             src={"/images/logo.png"}
-            layout="fill"
+            fill
             alt="logo"
-            className="object-contain"
+            sizes="100px"
+            className="object-contain w-20"
           />
         </nav>
         <div className="flex justify-center">
-          <div className="bg-black bg-opacity-70 w-2/5 min-w-[400px] min-h-2/5 self-center text-white p-16 box-border flex flex-col gap-8">
+          <div className="bg-black bg-opacity-80 w-2/5 min-w-[400px] min-h-2/5 self-center text-white p-16 box-border flex flex-col gap-8">
             <form
               onSubmit={formik.handleSubmit}
               className="flex flex-col justify-center items-center gap-8"
@@ -72,7 +80,7 @@ function Form() {
                     onChange={formik.handleChange}
                     value={formik.values.email}
                     className="w-full h-12 border-[0.5px] border-slate-400 rounded-md px-4 placeholder:text-lg text-black text-lg"
-                    placeholder="name@email.com"
+                    placeholder="mail@email.com"
                   />
                   <span
                     className={`bg-[#fe343476] mt-2 rounded-md p-2 box-border ${
